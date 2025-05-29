@@ -2,131 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FadeMaster Barber</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barber Pro | Book Your Style</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+    /* Reset & Base */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter', sans-serif; background:#0f1116; color:#eaeaea; }
+    a { text-decoration:none; color:inherit; }
 
-    body {
-      background: #f7f9fc;
-      color: #333;
-      line-height: 1.6;
-    }
+    /* Navigation */
+    header { background:#1f2330; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:100; }
+    .logo { display:flex; align-items:center; }
+    .logo img { height:40px; }
+    .logo h1 { margin-left:0.5rem; font-size:1.5rem; color:#fff; }
+    nav { }
+    nav ul { display:flex; list-style:none; }
+    nav li { margin-left:1.5rem; }
+    nav a { font-weight:500; transition:color .2s; }
+    nav a:hover { color:#6366f1; }
 
-    header {
-      background: #1e1e2f;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
+    /* Hero */
+    .hero { text-align:center; padding:4rem 1rem; background:linear-gradient(135deg, #2c2f48 0%, #1f2330 100%); }
+    .hero h2 { font-size:2.5rem; margin-bottom:1rem; }
+    .hero p { max-width:600px; margin:0 auto; line-height:1.6; color:#ccc; }
 
-    .logo {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
+    /* Layout */
+    .main-section { display:grid; grid-template-columns:1fr 1fr; gap:2rem; max-width:1000px; margin:3rem auto; padding:0 1rem; }
+    .services-card, .form-card { background:rgba(255,255,255,0.05); border-radius:12px; padding:2rem; box-shadow:0 8px 24px rgba(0,0,0,0.3); }
 
-    .logo::before {
-      content: "💈";
-      font-size: 2.5rem;
-    }
+    /* Services List */
+    .services-card h3 { margin-bottom:1rem; font-size:1.5rem; }
+    .service-item { display:flex; justify-content:space-between; padding:0.75rem; border-radius:8px; margin-bottom:0.75rem; background:rgba(255,255,255,0.1); }
+    .service-item:last-child { margin-bottom:0; }
+    .service-item .name { font-weight:500; }
+    .service-item .price { color:#6366f1; font-weight:600; }
 
-    .subtitle {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      font-weight: 300;
-      color: #ddd;
+    /* Booking Form */
+    .form-card h3 { text-align:center; margin-bottom:1rem; font-size:1.5rem; }
+    .form-card label { display:block; margin-top:1rem; font-size:0.9rem; color:#aaa; }
+    .form-card input, .form-card select, .form-card button {
+      width:100%; padding:0.75rem; margin-top:0.5rem; border:none; border-radius:8px; font-size:1rem;
     }
+    .form-card input, .form-card select { background:rgba(255,255,255,0.1); color:#fff; }
+    .form-card button { background:#6366f1; color:#fff; font-weight:600; margin-top:1.5rem; cursor:pointer; transition:background .3s; }
+    .form-card button:hover { background:#4f46e5; }
+    #response-msg { text-align:center; margin-top:1rem; font-size:0.9rem; color:#ccc; }
 
-    .container {
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #1e1e2f;
-    }
-
-    .about {
-      max-width: 800px;
-      margin: 0 auto 50px;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-    }
-
-    .about p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
-
-    .calendly-inline-widget {
-      height: 700px;
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    footer {
-      background: #1e1e2f;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-      font-size: 0.9rem;
-    }
+    /* Footer */
+    footer { background:#1f2330; text-align:center; padding:1rem; color:#888; margin-top:4rem; }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo">FadeMaster</div>
-    <div class="subtitle">Precision Cuts. Professional Service. Always Fresh.</div>
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png" alt="Logo">
+      <h1>Barber Pro</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#booking">Book Now</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div class="container">
-    <h2 class="section-title">About the Barber</h2>
-    <div class="about">
-      <p>
-        Welcome to <strong>FadeMaster</strong>, the go-to destination for the freshest fades and sharpest looks in town.
-        Our expert barber, Jay, has over 10 years of experience in classic and modern cuts, beard grooming, and styling.
-        Whether you're looking for a traditional trim or a trendy makeover, you're in expert hands. Book your appointment below and level up your look!
-      </p>
+  <section id="about" class="hero">
+    <h2>Professional Haircuts & Styling</h2>
+    <p>Experience premium grooming services with Barber Pro's expert touch. Our team ensures you leave looking sharp and confident every time.</p>
+  </section>
+
+  <section id="services" class="main-section">
+    <div class="services-card">
+      <h3>Hair Services</h3>
+      <div class="service-item"><span class="name">Classic Haircut</span><span class="price">₹499</span></div>
+      <div class="service-item"><span class="name">Hair Styling</span><span class="price">₹399</span></div>
+      <div class="service-item"><span class="name">Fade / Taper Cut</span><span class="price">₹599</span></div>
+      <h3 style="margin-top:2rem;">Beard Services</h3>
+      <div class="service-item"><span class="name">Beard Trim</span><span class="price">₹199</span></div>
+      <div class="service-item"><span class="name">Beard Styling</span><span class="price">₹299</span></div>
+      <div class="service-item"><span class="name">Full Groom</span><span class="price">₹449</span></div>
     </div>
 
-    <h2 class="section-title">Book an Appointment</h2>
-    <!-- Calendly Embed -->
-    <div 
-      class="calendly-inline-widget" 
-      data-url="https://calendly.com/YOUR_USERNAME/barber-booking" 
-      style="min-width:320px;height:700px;">
+    <div id="booking" class="form-card">
+      <h3>Book Your Appointment</h3>
+      <form id="booking-form">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" placeholder="Enter your full name" required />
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" placeholder="your.email@example.com" required />
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" placeholder="(555) 123-4567" required />
+        <label for="service">Service *</label>
+        <select id="service" required>
+          <option value="Classic Haircut">Classic Haircut – ₹499</option>
+          <option value="Beard Trim">Beard Trim – ₹199</option>
+          <option value="Haircut + Beard">Haircut + Beard – ₹749</option>
+          <option value="Hair Styling">Hair Styling – ₹399</option>
+        </select>
+        <button type="submit">Book Appointment</button>
+      </form>
+      <p id="response-msg"></p>
     </div>
-    <script type="text/javascript" 
-            src="https://assets.calendly.com/assets/external/widget.js" 
-            async>
-    </script>
-  </div>
+  </section>
+
+  <section id="contact" class="hero" style="padding:2rem 1rem;">
+    <h2>Contact Us</h2>
+    <p>📍 MG Road, Ahmedabad | 📞 +91 98765 43210 | ✉️ info@barberpro.com</p>
+  </section>
 
   <footer>
-    &copy; 2025 FadeMaster Barber. All rights reserved.
+    &copy; 2025 Barber Pro. All rights reserved.
   </footer>
 
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function () { emailjs.init("hCTcGRY7Jb7qx-mmz"); })();
+    document.getElementById("booking-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const params = {
+        from_name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        service: document.getElementById("service").value
+      };
+      emailjs.send("service_c23o2rg", "template_yo4ivke", params)
+        .then(() => {
+          document.getElementById("response-msg").innerText = "Email sent! Redirecting to Calendly...";
+          setTimeout(() => window.location.href = "https://calendly.com/YOUR-CALENDLY-LINK", 2000);
+        }, () => {
+          document.getElementById("response-msg").innerText = "Failed to send. Please try again.";
+        });
+    });
+  </script>
 </body>
 </html>
