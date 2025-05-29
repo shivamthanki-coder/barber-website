@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FadeMaster Barber</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1e1e2f;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .logo::before {
+      content: "💈";
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: #ddd;
+    }
+
+    .container {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #1e1e2f;
+    }
+
+    .about {
+      max-width: 800px;
+      margin: 0 auto 50px;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .calendly-inline-widget {
+      height: 700px;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background: #1e1e2f;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">FadeMaster</div>
+    <div class="subtitle">Precision Cuts. Professional Service. Always Fresh.</div>
+  </header>
+
+  <div class="container">
+    <h2 class="section-title">About the Barber</h2>
+    <div class="about">
+      <p>
+        Welcome to <strong>FadeMaster</strong>, the go-to destination for the freshest fades and sharpest looks in town.
+        Our expert barber, Jay, has over 10 years of experience in classic and modern cuts, beard grooming, and styling.
+        Whether you're looking for a traditional trim or a trendy makeover, you're in expert hands. Book your appointment below and level up your look!
+      </p>
+    </div>
+
+    <h2 class="section-title">Book an Appointment</h2>
+    <!-- Calendly Embed -->
+    <div 
+      class="calendly-inline-widget" 
+      data-url="https://calendly.com/YOUR_USERNAME/barber-booking" 
+      style="min-width:320px;height:700px;">
+    </div>
+    <script type="text/javascript" 
+            src="https://assets.calendly.com/assets/external/widget.js" 
+            async>
+    </script>
+  </div>
+
+  <footer>
+    &copy; 2025 FadeMaster Barber. All rights reserved.
+  </footer>
+
+</body>
+</html>
