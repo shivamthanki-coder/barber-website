@@ -16,7 +16,6 @@
     .logo { display:flex; align-items:center; }
     .logo img { height:40px; }
     .logo h1 { margin-left:0.5rem; font-size:1.5rem; color:#fff; }
-    nav { }
     nav ul { display:flex; list-style:none; }
     nav li { margin-left:1.5rem; }
     nav a { font-weight:500; transition:color .2s; }
@@ -27,30 +26,32 @@
     .hero h2 { font-size:2.5rem; margin-bottom:1rem; }
     .hero p { max-width:600px; margin:0 auto; line-height:1.6; color:#ccc; }
 
-    /* Layout */
+    /* Main Layout */
     .main-section { display:grid; grid-template-columns:1fr 1fr; gap:2rem; max-width:1000px; margin:3rem auto; padding:0 1rem; }
-    .services-card, .form-card { background:rgba(255,255,255,0.05); border-radius:12px; padding:2rem; box-shadow:0 8px 24px rgba(0,0,0,0.3); }
+    .card { background:rgba(255,255,255,0.05); border-radius:12px; padding:2rem; box-shadow:0 8px 24px rgba(0,0,0,0.3); }
 
     /* Services List */
-    .services-card h3 { margin-bottom:1rem; font-size:1.5rem; }
+    .services-list h3 { margin-bottom:1rem; font-size:1.5rem; }
     .service-item { display:flex; justify-content:space-between; padding:0.75rem; border-radius:8px; margin-bottom:0.75rem; background:rgba(255,255,255,0.1); }
     .service-item:last-child { margin-bottom:0; }
     .service-item .name { font-weight:500; }
     .service-item .price { color:#6366f1; font-weight:600; }
 
     /* Booking Form */
-    .form-card h3 { text-align:center; margin-bottom:1rem; font-size:1.5rem; }
-    .form-card label { display:block; margin-top:1rem; font-size:0.9rem; color:#aaa; }
-    .form-card input, .form-card select, .form-card button {
+    .form-list h3 { text-align:center; margin-bottom:1rem; font-size:1.5rem; }
+    .form-list label { display:block; margin-top:1rem; font-size:0.9rem; color:#aaa; }
+    .form-list input, .form-list select, .form-list button {
       width:100%; padding:0.75rem; margin-top:0.5rem; border:none; border-radius:8px; font-size:1rem;
     }
-    .form-card input, .form-card select { background:rgba(255,255,255,0.1); color:#fff; }
-    .form-card button { background:#6366f1; color:#fff; font-weight:600; margin-top:1.5rem; cursor:pointer; transition:background .3s; }
-    .form-card button:hover { background:#4f46e5; }
+    .form-list input, .form-list select { background:rgba(255,255,255,0.1); color:#fff; }
+    .form-list button { background:#6366f1; color:#fff; font-weight:600; margin-top:1.5rem; cursor:pointer; transition:background .3s; }
+    .form-list button:hover { background:#4f46e5; }
     #response-msg { text-align:center; margin-top:1rem; font-size:0.9rem; color:#ccc; }
 
-    /* Footer */
-    footer { background:#1f2330; text-align:center; padding:1rem; color:#888; margin-top:4rem; }
+    /* Contact & Footer */
+    #contact { text-align:center; padding:2rem 1rem; }
+    #contact p { color:#bbb; }
+    footer { background:#1f2330; text-align:center; padding:1rem; color:#888; margin-top:2rem; }
   </style>
 </head>
 <body>
@@ -63,7 +64,7 @@
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#booking">Book Now</a></li>
+        <li><a href="#booking">Book</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -71,11 +72,11 @@
 
   <section id="about" class="hero">
     <h2>Professional Haircuts & Styling</h2>
-    <p>Experience premium grooming services with Barber Pro's expert touch. Our team ensures you leave looking sharp and confident every time.</p>
+    <p>Experience premium grooming services with Barber Pro's expert touch. Our talented team ensures you leave looking sharp and confident.</p>
   </section>
 
   <section id="services" class="main-section">
-    <div class="services-card">
+    <div class="card services-list">
       <h3>Hair Services</h3>
       <div class="service-item"><span class="name">Classic Haircut</span><span class="price">₹499</span></div>
       <div class="service-item"><span class="name">Hair Styling</span><span class="price">₹399</span></div>
@@ -86,21 +87,21 @@
       <div class="service-item"><span class="name">Full Groom</span><span class="price">₹449</span></div>
     </div>
 
-    <div id="booking" class="form-card">
+    <div id="booking" class="card form-list">
       <h3>Book Your Appointment</h3>
       <form id="booking-form">
         <label for="name">Full Name *</label>
-        <input type="text" id="name" placeholder="Enter your full name" required />
+        <input type="text" id="name" placeholder="John Doe" required />
         <label for="email">Email Address *</label>
-        <input type="email" id="email" placeholder="your.email@example.com" required />
+        <input type="email" id="email" placeholder="john@example.com" required />
         <label for="phone">Phone Number *</label>
-        <input type="tel" id="phone" placeholder="(555) 123-4567" required />
+        <input type="tel" id="phone" placeholder="9876543210" required />
         <label for="service">Service *</label>
         <select id="service" required>
-          <option value="Classic Haircut">Classic Haircut – ₹499</option>
-          <option value="Beard Trim">Beard Trim – ₹199</option>
-          <option value="Haircut + Beard">Haircut + Beard – ₹749</option>
-          <option value="Hair Styling">Hair Styling – ₹399</option>
+          <option value="Classic Haircut - ₹499">Classic Haircut – ₹499</option>
+          <option value="Beard Trim - ₹199">Beard Trim – ₹199</option>
+          <option value="Haircut + Beard - ₹749">Haircut + Beard – ₹749</option>
+          <option value="Hair Styling - ₹399">Hair Styling – ₹399</option>
         </select>
         <button type="submit">Book Appointment</button>
       </form>
@@ -108,9 +109,9 @@
     </div>
   </section>
 
-  <section id="contact" class="hero" style="padding:2rem 1rem;">
+  <section id="contact">
     <h2>Contact Us</h2>
-    <p>📍 MG Road, Ahmedabad | 📞 +91 98765 43210 | ✉️ info@barberpro.com</p>
+    <p>📍 MG Road, Ahmedabad  |  📞 +91 98765 43210  |  ✉️ info@barberpro.com</p>
   </section>
 
   <footer>
@@ -119,22 +120,34 @@
 
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
-    (function () { emailjs.init("hCTcGRY7Jb7qx-mmz"); })();
-    document.getElementById("booking-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const params = {
-        from_name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        service: document.getElementById("service").value
-      };
-      emailjs.send("service_c23o2rg", "template_yo4ivke", params)
-        .then(() => {
-          document.getElementById("response-msg").innerText = "Email sent! Redirecting to Calendly...";
-          setTimeout(() => window.location.href = "https://calendly.com/YOUR-CALENDLY-LINK", 2000);
-        }, () => {
-          document.getElementById("response-msg").innerText = "Failed to send. Please try again.";
-        });
+    window.addEventListener('DOMContentLoaded', () => {
+      emailjs.init('hCTcGRY7Jb7qx-mmz');
+      const form = document.getElementById('booking-form');
+      const msg = document.getElementById('response-msg');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        msg.textContent = 'Sending… please wait';
+
+        const params = {
+          from_name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          phone: document.getElementById('phone').value,
+          service: document.getElementById('service').value
+        };
+
+        console.log('Sending params:', params);
+        emailjs.send('service_c23o2rg', 'template_yo4ivke', params)
+          .then((res) => {
+            console.log('EmailJS success:', res);
+            msg.textContent = 'Email sent! Redirecting…';
+            setTimeout(() => window.location.href = 'https://calendly.com/YOUR-CALENDLY-LINK', 2000);
+          })
+          .catch((err) => {
+            console.error('EmailJS error:', err);
+            msg.innerHTML = `<strong>Failed to send:</strong><br>${err.text || JSON.stringify(err)}`;
+          });
+      });
     });
   </script>
 </body>
